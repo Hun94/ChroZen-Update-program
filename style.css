@@ -1,0 +1,38 @@
+
+.update_box{
+  box-sizing: border-box;
+  width: 450px;
+  height: 150px;
+  border:2px solid black;
+  padding:5px 20px 20px 20px;
+  margin:  5px auto;
+  text-align:center;
+}
+
+.button_box{
+  box-sizing: border-box;
+  width: 450px;
+  height: 80px;
+  padding:5px 20px 20px 20px;
+  margin: auto;
+  text-align: center;
+  
+}
+
+.update_botton{
+  align-items: center;
+  box-sizing: border-box;
+  width: 100px;
+  height: 25px;
+  margin: 10px auto;
+}
+
+.version_box{
+  text-align:center;
+  margin: 5px; 
+}
+
+.title-box{
+  text-align :center;
+}
+
