@@ -1,67 +1,32 @@
-// ssh 연결
-var node_ssh = require('node-ssh');
-var ssh = new node_ssh();
-var connection = ssh.connect({
-  host: 10.10,10.88:number ,
-  username: linaro,
-  port: 22,
-  password: linaro,
-  readyTimeout: 30
-});
+// 장비연결되어있는지 확인 및 연결
+    // ssh로 실행
+// image 폴더 선택
+// Main 펌웨어 선택
+// UI 펌웨어 선택
+// 선택된 폴더 및 펌웨어 연결된 장비로 복사 
+// 업데이트 명령어 진행
+// 장비 리부트
+// 종료
 
 
-ssh.execCommand('chmod 777 ChroZenGC_Main_134', { }).then(function(result) {
-	console.log('결과: ' + result.stdout);
-	console.log('에러: ' + result.stderr);
-   ssh.execCommand('ln -sf ChroZenGC_Main_134 ChroZenGC_Main', { }).then(function(result) {
-	   console.log('결과: ' + result.stdout);
-	   console.log('에러: ' + result.stderr);
-		 	ssh.dispose();//커넥션 종료
-   });
-})
+let ip = document.getElementById("connection_ip");
+let connection = document.getElementById("connection_button");
+let result = document.getElementById("connection_result")
+
+connection.addEventListener("click", Connection);
+
+function Connection(){
+  //입력된 IP 로 ssh 연결
+
+
+  //연결 결과 표시
+  if(){
+    result.textContent="Connected"
+  }
+  else{
+    result.textContent="Unconnected"
+  }
 
 
 
-
-
-
-/*
-//명령어 보내기   
-ssh.execCommand('원하는 명령어', { }).then(function(result) {
-	console.log('결과: ' + result.stdout);
-	console.log('에러: ' + result.stderr);
-    ssh.dispose();//커넥션 종료
-});
-
-//파일 받기
-ssh.getFile('로컬 경로', '서버에서 받을 파일').then(function(Contents) {
-	console.log("DONE");
-  }, function(error) {
-	console.log(error);
-}).then(function(){
-	ssh.dispose(); //커넥션 종료
-});
-
-//파일 보내기
-ssh.putFiles([{ local: '보낼파일', remote: '저장할 주소' }]).then(function() {
-	console.log("DONE");
-  }, function(error) {
-	console.log(error);
-  }).then(function(){
-	ssh.dispose();  //커넥션 종료
-});
-
-//then 지옥...
-ssh.execCommand('원하는 명령어1', { }).then(function(result) {
-	console.log('결과: ' + result.stdout);
-	console.log('에러: ' + result.stderr);
-   ssh.execCommand('원하는 명령어2', { }).then(function(result) {
-	   console.log('결과: ' + result.stdout);
-	   console.log('에러: ' + result.stderr);
-       ssh.execCommand('원하는 명령어3', { }).then(function(result) {
-	       console.log('결과: ' + result.stdout);
-	       console.log('에러: ' + result.stderr);
-       });
-   });
-})
-*/
+}
